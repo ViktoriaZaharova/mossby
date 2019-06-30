@@ -2,78 +2,613 @@
 @import "vars"
 
 *
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
-	opacity: 1
+  color: #666
+  opacity: 1
 
 *:-moz-placeholder
-	color: #666
-	opacity: 1
+  color: #666
+  opacity: 1
 
 *::-moz-placeholder
-	color: #666
-	opacity: 1
+  color: #666
+  opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
-	opacity: 1
+  color: #666
+  opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+  color: #666
+
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+  color: #666
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
-	margin: 0
-	padding: 0
-	border: 0
-	font-size: 100%
-	font: inherit
-	vertical-align: baseline
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
-	display: block
+  display: block
 
-ol, ul 
-	list-style: none
+ol, ul
+  list-style: none
 
 blockquote, q
-	quotes: none
+  quotes: none
 
 blockquote:before, blockquote:after, q:before, q:after
-	content: ''
-	content: none
+  content: ''
+  content: none
 
 table
-	border-collapse: collapse
-	border-spacing: 0
+  border-collapse: collapse
+  border-spacing: 0
 
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: normal
-	font-family: $default-font
-	overflow-x: hidden
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: normal
+  font-family: $default-font
+  overflow-x: hidden
 
 img
-	display: block
-	max-width: 100%
-	height: auto
+  display: block
+  max-width: 100%
+  height: auto
 
 .text-center
-	text-align: center
+  text-align: center
+
+a
+  display: block
+  transition: .3s ease
+  text-decoration: none
+  &:hover
+    color: $accent
+
+button
+  border: none
+    radius: 0
+  outline: none
+  transition: .3s ease
+
+.btn
+  text-decoration: none
+  border: none
+    radius: 0
+  outline: none
+
+input, textarea
+  outline: none
+  background: transparent
+  border: none
+    radius: 0
+  box-shadow: none
+  width: 100%
+  box-sizing: border-box
+
+h1
+  color: #ffffff
+  font-size: 100px
+  font-family: 'Akrobatblack', sans-serif
+  position: relative
+  z-index: 1
+  width: 100%
+
+h2
+  color: $title
+  font-size: 48px
+  font-family: 'Akrobatbold', sans-serif
+  letter-spacing: -1.2px
+  line-height: 48px
+  position: relative
+  z-index: 1
+  width: 100%
+
+.links
+  color: #ced64e
+  font-size: 12px
+  font-family: 'Roboto', sans-serif
+  text-decoration: underline
+  text-transform: uppercase
+
+.links-callback
+  position: relative
+  padding: 0 0 0 26px
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(0,-50%)
+    width: 22px
+    height: 21px
+    background: url("../img/callback.png") no-repeat center
+      size: contain
 
 
-@import "media" // Всегда в конце
+.phone
+  position: relative
+  display: flex
+  align-items: flex-end
+  padding: 0 0 0 18px
+  font-size: 36px
+  font-family: 'Akrobatbold', sans-serif
+  line-height: 33px
+  sub
+    font-size: 30px
+    font-family: $default-font
+    line-height: 30px
+    margin: 0 5px 0 0
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(0,-50%)
+    background: url("../img/phone.png") no-repeat center
+      size: contain
+    width: 15px
+    height: 26px
+
+.box-contacts
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+
+.container
+  position: relative
+  margin: 0 auto
+  display: flex
+  flex-wrap: wrap
+  max-width: 1235px
+  padding: 0 15px
+
+//header
+header
+  width: 100%
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 10
+  padding: 11px 0
+  .container
+    justify-content: space-between
+    align-items: center
+  .phone
+    color: #fff
+    margin: 0 0 5px
+    &:hover
+      color: $accent
+
+.menu
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  li
+    margin: 0 25px
+    a
+      color: #fff
+      font-size: 18px
+      font-family: 'Roboto', sans-serif
+      &:hover
+        color: $accent
+
+//header end
+
+//main
+.main-slider
+  width: 100%
+  position: relative
+  .slick-dots
+    position: absolute
+    bottom: 47px
+    left: 0
+
+  .main-slider__box
+    padding: 128px 0 183px
+    overflow: hidden
+    max-height: 700px
+    position: relative
+    width: 100%
+  .image-slide
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+      max-width: none
+      margin: 0 auto
+
+main
+  h1
+    margin: 103px 0 20px
+  .container
+    flex-direction: column
+    align-items: flex-start
+  .text-overlay
+    letter-spacing: -20px
+    text-transform: uppercase
+
+.text-overlay
+  position: absolute
+  width: 100%
+  top: 0
+  left: 50%
+  transform: translate(-50%,0)
+  text-align: center
+  font-size: 400px
+  font-family: 'Akrobatblack', sans-serif
+  opacity: .2
+  line-height: 300px
+
+.list-services
+  position: relative
+  z-index: 1
+  color: #fff
+  li
+    display: flex
+    align-items: center
+    font-size: 36px
+    line-height: 60px
+    .icon
+      margin: 0 19px 0 0
+
+
+.slick-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  li.slick-active
+    &:before
+      border-color: #ffffff
+
+  li
+    width: 5px
+    height: 5px
+    background: #fff
+    border-radius: 50%
+    margin: 0 7.5px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: -100%
+      top: -100%
+      border: 2px solid transparent
+      width: 15px
+      height: 15px
+      border-radius: 50%
+      transition: .3s ease
+    button
+      display: none
+
+
+.slick-slide
+  outline: none
+
+
+
+//project
+.project
+  padding: 100px 0 90px
+  position: relative
+  overflow: hidden
+
+.project-text
+  max-width: 385px
+  color: #717171
+  .title
+    margin: 0 0 29px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+  h3
+    color: $accent
+    font-size: 24px
+    font-family: 'Roboto', sans-serif
+    font-weight: 700
+    margin: 0 0 37px
+  p
+    font-weight: 300
+    line-height: 24px
+    margin: 0 0 30px
+    &:last-child
+      margin: 0
+
+.project-slider
+  width: 100%
+  position: absolute
+  top: 100px
+  left: 0
+  padding: 0 0 0 40%
+  &:before
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    width: 380px
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,0.8) 60%,rgba(255,255,255,0.9) 70%,rgba(255,255,255,1) 85%)
+    z-index: 2
+
+.project-box
+  height: 500px
+  width: 380px
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  margin: 0 auto
+  img
+    max-width: none
+    height: 100%
+
+.project-slider-nav
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  position: relative
+  .slick-arrow
+    width: 16px
+    height: 29px
+  .slick-next
+    background: url("../img/arrow-right.png") no-repeat center
+      size: contain
+    right: 0
+  .slick-prev
+    background: url("../img/arrow-left.png") no-repeat center
+      size: contain
+    left: 0
+
+
+.counter-slide
+  position: relative
+  display: flex
+  align-items: flex-end
+  margin: 0 11px
+  .cp, .default
+    position: relative
+    z-index: 1
+    font-weight: 300
+    font-family: 'Roboto', sans-serif
+    color: #717171
+  .default
+    font-size: 20px
+    line-height: 18px
+  .cp
+    font-size: 30px
+    line-height: 24px
+  .cp2
+    position: absolute
+    color: #f0f3f1
+    font-size: 150px
+    font-family: 'Akrobatblack', sans-serif
+    line-height: 120px
+    left: -2px
+    bottom: 0
+
+.slick-arrow
+  top: 0
+  transform: translate(0)
+  position: relative
+  z-index: 1
+  &:before
+    display: none
+
+.slick-next
+  right: 0
+
+.slick-prev
+  left: 0
+
+
+//letters
+.letters
+  .text-overlay
+    font-size: 120px
+    line-height: 90px
+    color: $title
+    opacity: .05
+    top: auto
+    bottom: 21px
+  .title
+    width: 100%
+    position: relative
+  h2
+    text-align: center
+    font-size: 60px
+    font-family: 'Akrobatblack', sans-serif
+    margin: 0 0 20px
+  h4
+    text-align: center
+    width: 100%
+    color: #8c958f
+    font-size: 24px
+    font-family: 'Roboto', sans-serif
+    font-weight: 300
+
+.letters-slider
+  width: 100%
+  margin: 62px 0 30px
+
+.letters-box
+  position: relative
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 390px
+  height: 300px
+  border-radius: 5px
+  margin: 0 auto
+  img
+    max-width: none
+    height: 100%
+
+.letters-slider-nav, .products-slider-nav
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: row
+  flex-wrap: nowrap
+  .slick-arrow
+    position: relative
+    width: 47px
+    height: 40px
+  .slick-prev
+    background: url("../img/arr-left.png") no-repeat center
+      size: contain
+  .slick-next
+    background: url("../img/arr-right.png") no-repeat center
+      size: contain
+    order: 1
+  .slick-dots
+    width: auto
+    bottom: 0
+    margin: 0 19px
+    position: relative
+    li
+      background-color: #1e242f
+      box-sizing: border-box
+      transition: .3s ease
+    li.slick-active
+      background: transparent
+      &:before
+        border-color: #48af41
+
+
+//products
+.products
+  margin: 30px 0 0
+  background: url("../img/bg1.jpg") no-repeat center
+    size: cover
+  padding: 87px 0 30px
+  .text-overlay
+    font-size: 130px
+    line-height: 100px
+    color: $title
+    opacity: .05
+    top: auto
+    bottom: 0
+  .title
+    position: relative
+    width: 100%
+  h2
+    text-align: center
+    font-size: 60px
+
+.products-slider
+  width: 100%
+
+.products-box
+  margin: 57px auto 30px
+  width: 380px
+  height: 500px
+  background: #fff
+  box-shadow: 3px 4px 40px rgba(0, 0, 0, 0.05)
+  border-radius: 5px
+  overflow: hidden
+  .image
+    width: 100%
+    height: 250px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+  .text
+    padding: 19px 30px 16px
+    height: calc(100% - 250px)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  .name
+    color: $title
+    font-size: 24px
+    font-family: 'Akrobatextrabold', sans-serif
+    margin: 0 0 5px
+  h6
+    color: #7a827d
+  ul
+    margin: 12px 0
+    li
+      display: flex
+      align-items: center
+      color: $title
+      font-size: 16px
+      font-family: 'Roboto', sans-serif
+      &:last-child
+        margin: 7px 0 0 0
+      p
+        margin: 0 14px 0 0
+        font-weight: 700
+  .line
+    width: 100%
+    display: flex
+    align-items: center
+    margin: auto 0 0 0
+  .add-basket
+    margin: 0 0 0 34px
+    width: 29px
+    height: 30px
+
+
+.price
+  display: flex
+  align-items: flex-end
+  p
+    color: $title
+    margin: 0 10px 0 0
+
+    font-family: 'Akrobatlight', sans-serif
+  h6
+    color: $accent
+    font-size: 48px
+    line-height: 26px
+    font-family: 'Akrobatextrabold', sans-serif
+    span
+      font-size: 24px
+
+.slick-dotted.slick-slider
+  margin-bottom: 0
+
+.color-wrapper
+  display: flex
+  align-items: center
+
+.color-box
+  border-radius: 50%
+  width: 30px
+  height: 30px
+  margin: 0 5px 0 0
+  &:last-child
+    margin: 0
+
+
+@import "media"
+// Всегда в конце
