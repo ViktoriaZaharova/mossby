@@ -40,4 +40,11 @@ $(document).ready(function() {
         nextArrow: '<button type="button" class="slick-next"></button>',
         prevArrow: '<button type="button" class="slick-prev"></button>'
     });
+
+    $('.customers-slider').slick({
+        slidesToShow: 4,
+        arrows: true,
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        prevArrow: '<button type="button" class="slick-prev"></button>'
+    });
 });
