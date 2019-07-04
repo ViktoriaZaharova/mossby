@@ -67,6 +67,8 @@ body
   position: relative
   line-height: normal
   font-family: $default-font
+
+html, body
   overflow-x: hidden
 
 img
@@ -232,12 +234,29 @@ header
       &:hover
         color: $accent
 
+.btn-mobile-menu
+  width: 25px
+  height: 25px
+  background: $accent
+  display: none
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  padding: 7px 5px
+  span
+    width: 100%
+    height: 2px
+    background: #fff
+    display: block
+
 //header end
 
 //main
 .main-slider
   width: 100%
   position: relative
+  max-width: 2000px
+  margin: 0 auto
   .slick-dots
     position: absolute
     bottom: 47px
@@ -255,8 +274,11 @@ header
     top: 0
     width: 100%
     height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
     img
-      width: 100%
+      //width: 100%
       height: 100%
       max-width: none
       margin: 0 auto
@@ -338,6 +360,12 @@ main
   overflow: hidden
   h2
     letter-spacing: -1.2px
+
+.project-description-slider
+  width: 100%
+
+.project-description__box
+  width: 100%
 
 .project-text
   max-width: 385px
@@ -969,6 +997,7 @@ form
 .customers-slider
   max-width: 965px
   padding: 0 33px
+  width: 100%
   .slick-arrow
     position: absolute
     top: 50%
